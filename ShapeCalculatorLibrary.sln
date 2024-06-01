@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeCalculatorLibrary", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeCalculatorTests", "ShapeCalculatorTests\ShapeCalculatorTests.csproj", "{6A91F455-A8D9-4BD8-8104-76DE74838BC5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBaseTask", "DataBaseTask", "{98B02AD9-CF35-42C5-95D6-621920BCF0E4}"
+	ProjectSection(SolutionItems) = preProject
+		ProductCategoryTask.txt = ProductCategoryTask.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

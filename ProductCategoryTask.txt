@@ -1,0 +1,48 @@
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName NVARCHAR(100)
+);
+
+CREATE TABLE Categories (
+    CategoryID INT PRIMARY KEY,
+    CategoryName NVARCHAR(100)
+);
+
+CREATE TABLE ProductCategories (
+    ProductID INT,
+    CategoryID INT,
+    CONSTRAINT Product_FK FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    CONSTRAINT Category_FK FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+);
+INSERT INTO Products (ProductID, ProductName)
+VALUES
+(1, 'Product A'),
+(2, 'Product B'),
+(3, 'Product C'),
+(4, 'Product D without Category'),
+(5, 'Product without Category');
+
+INSERT INTO Categories (CategoryID, CategoryName)
+VALUES
+(1, 'Category 1'),
+(2, 'Category 2'),
+(3, 'Category 3');
+
+INSERT INTO ProductCategories (ProductID, CategoryID)
+VALUES
+(1, 1),
+(1, 2),
+(2, 3),
+(3, 1);
+
+SELECT 
+    p.ProductName,
+    c.CategoryName
+FROM 
+    Products p
+LEFT JOIN 
+    ProductCategories pc ON p.ProductID = pc.ProductID
+LEFT JOIN 
+    Categories c ON pc.CategoryID = c.CategoryID
+ORDER BY 
+    p.ProductName, c.CategoryName;
